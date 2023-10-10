@@ -1,1 +1,25 @@
+// C++ code
+//
+int sensorValue = 0;
 
+void setup()
+{
+  pinMode(2, INPUT);
+  pinMode(13, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  // read the state of the sensor
+  sensorValue = digitalRead(2);
+  // check if sensor pin is HIGH. If it is turn on LED
+ 
+  if (sensorValue == HIGH) {
+    digitalWrite(13, HIGH);
+    Serial.println("Motion detected");
+  } else {
+    digitalWrite(13, LOW);
+  }
+  delay(10);
+}
